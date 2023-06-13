@@ -39,6 +39,7 @@ export default class Chart extends Component {
           }    
         return (
             <div>
+              {console.log(data)}
                 <Bar
                 data={data}
                 width={120}

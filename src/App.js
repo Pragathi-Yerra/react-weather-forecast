@@ -66,11 +66,8 @@ class App extends Component {
               humidity: undefined,
               description: undefined,
               error: "Unable to get weather info!... Please check the values entered..."
-
               });
-
         }else{
-            
             console.log(data);
             let labels = [];
             let temp_max = [];
@@ -83,13 +80,17 @@ class App extends Component {
                
                   if(!labels.includes(date_) && dt.dt_txt.split(' ')[1] === '12:00:00'){
                     // console.log(dt.dt_txt.split(' ')[1]);
-                    labels.push(date_);
+                    
                     temp_max.push(dt.main['temp_max']);
                     hum.push(dt.main['humidity']);
                     wind_speed.push(dt.wind['speed']);
+                    console.log(date_);
+                    console.log(temp_max);
+                    console.log(hum);
+                    console.log(wind_speed);
+                    labels.push(date_);
                   }
             } 
-           
             if(labels.length !== temp_max.length){
               labels.shift();
             }
